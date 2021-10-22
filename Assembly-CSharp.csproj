@@ -69,7 +69,6 @@
     <Compile Include="Assets\Script\IndexScrollView.cs" />
     <Compile Include="Assets\Script\LoginButton.cs" />
     <Compile Include="Assets\Script\NewBehaviourScript.cs" />
-    <Compile Include="Assets\Script\ShowMessageItem.cs" />
     <Compile Include="Assets\Script\User.cs" />
     <Compile Include="Assets\Script\Users.cs" />
     <Reference Include="Unity.TextMeshPro.Editor">

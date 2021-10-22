@@ -7,7 +7,7 @@ public class Main : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        GetComponent<IndexScrollView>().SetData(0,10,OnCreateItem,OnDelItem);
     }
 
     // Update is called once per frame

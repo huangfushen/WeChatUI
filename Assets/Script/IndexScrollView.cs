@@ -105,9 +105,11 @@ public class IndexScrollView : MonoBehaviour
 
     void DelItem(int index)
     {
+        
         var go = content_view.transform.Find(index.ToString()).gameObject;
         if (go != null)
         {
+            // 删除item
             onDel(go);
             Destroy(go);
         }
@@ -115,16 +117,15 @@ public class IndexScrollView : MonoBehaviour
     void AddItem(int index)
     {
         var dataIndex = index > 0 ? (index % dataLength):((dataLength-1)-(-index%dataLength));
-        
+        // 生成预制体
         GameObject message = Instantiate(message_item);
+        //为预制体添加父级
         message.transform.parent = content_view.transform;
         
         var item  = message.GetComponent<NewBehaviourScript>();
         var position = new Vector3(0, index * -itemHeight);
         //更新Item上的位置
         item.SetPos(position);
-        
-        
         
         //更新Item上的表现
         item.SetData(index,dataIndex);
