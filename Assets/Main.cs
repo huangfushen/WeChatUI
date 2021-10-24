@@ -8,6 +8,7 @@ public class Main : MonoBehaviour
     void Start()
     {
         GetComponent<IndexScrollView>().SetData(0,10,OnCreateItem,OnDelItem);
+        GetComponent<FriendScrollView>().SetData(0,10,OnCreateItem,OnDelItem);
     }
 
     // Update is called once per frame
@@ -16,6 +17,7 @@ public class Main : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.A))
         {
             GetComponent<IndexScrollView>().SetData(0,10,OnCreateItem,OnDelItem);
+            GetComponent<FriendScrollView>().SetData(0,10,OnCreateItem,OnDelItem);
         }
     }
 
