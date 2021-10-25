@@ -43,6 +43,16 @@ public class DataMgr
         {"9","游戏"} ,
         {"1","朋友圈"} 
     };
+    
+    static string [,] data_me = new string [6,2] {
+        {"pay","支付"} ,
+        {"collect","收藏"} ,  
+        {"img_o","朋友圈"} ,  
+        {"card_bag","卡包"} ,
+        {"exp","表情"} ,
+        {"setting","设置"}
+    };
+    
     public static string GetData(int x, int y)
     {
         return data[x, y];
@@ -56,5 +66,10 @@ public class DataMgr
     public static string GetFindData(int x, int y)
     {
         return data_find[x, y];
+    }
+
+    public static string GetMePageData(int x, int y)
+    {
+        return data_me[x, y];
     }
 }

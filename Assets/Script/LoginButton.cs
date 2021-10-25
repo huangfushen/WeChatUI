@@ -13,6 +13,7 @@ public class LoginButton : MonoBehaviour
     public Text text_new;
     public void OnMouseUpAsButton()
     {
+        PlayerPrefs.DeleteKey("loginUser");
         // PlayerPrefs.SetString("huangfs","123456");
         username = GameObject.Find("UserName").GetComponent<InputField>().text;
         password = GameObject.Find("PassWord").GetComponent<InputField>().text;
@@ -27,6 +28,9 @@ public class LoginButton : MonoBehaviour
         {
             Vector2 site = new Vector2(5000,0);
             loginPage.transform.position = site;
+            PlayerPrefs.SetString("loginUser",username);
+            Image IndexPage = GameObject.Find("IndexPage").GetComponent<Image>();
+            IndexPage.transform.position = new Vector2(375,667);
             Debug.Log("登录成功");
         }
         else

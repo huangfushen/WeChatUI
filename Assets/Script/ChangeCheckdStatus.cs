@@ -128,8 +128,8 @@ public class ChangeCheckdStatus : MonoBehaviour
          {
              IndexPage.transform.position = site1;
              FriendPage.transform.position = site1;
-             FindPage.transform.position = site;
-             MePage.transform.position = site1;
+             FindPage.transform.position = site1;
+             MePage.transform.position = site;
          }
          
      }

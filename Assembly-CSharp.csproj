@@ -70,9 +70,11 @@
     <Compile Include="Assets\Script\FriendScrollView.cs" />
     <Compile Include="Assets\Script\IndexScrollView.cs" />
     <Compile Include="Assets\Script\LoginButton.cs" />
+    <Compile Include="Assets\Script\MeScrollView.cs" />
     <Compile Include="Assets\Script\NewBehaviourScript.cs" />
     <Compile Include="Assets\Script\NewFindScript.cs" />
     <Compile Include="Assets\Script\NewFriendScript.cs" />
+    <Compile Include="Assets\Script\NewMeScript.cs" />
     <Compile Include="Assets\Script\User.cs" />
     <Compile Include="Assets\Script\Users.cs" />
     <Reference Include="Unity.TextMeshPro.Editor">

@@ -40,7 +40,7 @@ public class FindScrollView : MonoBehaviour
         var viewHeight = GameObject.Find("Content_three").GetComponent<RectTransform>().sizeDelta.y;
         
         // 计算出页面初始化需要放几个
-        maxItemCount = Mathf.CeilToInt(viewHeight/itemHeight)+1;
+        maxItemCount = Mathf.CeilToInt(viewHeight/itemHeight);
     }
 
     void Start()
@@ -93,19 +93,19 @@ public class FindScrollView : MonoBehaviour
         while (Math.Abs(len -last_num) != 0)
         {
             //向上滑动，加载下方更多
-            if (len > last_num)
-            {
-                DelItem(upIndex++);
-                AddItem(downIndex++);
-                last_num++;    
-            }
+            // if (len > last_num)
+            // {
+            //     DelItem(upIndex++);
+            //     AddItem(downIndex++);
+            //     last_num++;    
+            // }
             //向下滑动，加载上方更多
-            else if ( len < last_num)
-            {
-                DelItem(--downIndex);
-                AddItem(--upIndex);
-                last_num--;
-            }
+            // else if ( len < last_num)
+            // {
+            //     DelItem(--downIndex);
+            //     AddItem(--upIndex);
+            //     last_num--;
+            // }
         }
     }
 
