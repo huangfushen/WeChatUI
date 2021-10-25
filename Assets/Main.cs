@@ -8,7 +8,8 @@ public class Main : MonoBehaviour
     void Start()
     {
         GetComponent<IndexScrollView>().SetData(0,10,OnCreateItem,OnDelItem);
-        GetComponent<FriendScrollView>().SetData(0,10,OnCreateItem,OnDelItem);
+        // GetComponent<FriendScrollView>().SetData(0,10,OnCreateItem,OnDelItem);
+        // GetComponent<FindScrollView>().SetData(0,10,OnCreateItem,OnDelItem);
     }
 
     // Update is called once per frame
@@ -18,6 +19,7 @@ public class Main : MonoBehaviour
         {
             GetComponent<IndexScrollView>().SetData(0,10,OnCreateItem,OnDelItem);
             GetComponent<FriendScrollView>().SetData(0,10,OnCreateItem,OnDelItem);
+            GetComponent<FindScrollView>().SetData(0,10,OnCreateItem,OnDelItem);
         }
     }
 

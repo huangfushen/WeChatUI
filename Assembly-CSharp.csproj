@@ -60,10 +60,12 @@
     <Compile Include="Assets\DataMgr.cs" />
     <Compile Include="Assets\Main.cs" />
     <Compile Include="Assets\Script\ChangeCheckdStatus.cs" />
+    <Compile Include="Assets\Script\FindScrollView.cs" />
     <Compile Include="Assets\Script\FriendScrollView.cs" />
     <Compile Include="Assets\Script\IndexScrollView.cs" />
     <Compile Include="Assets\Script\LoginButton.cs" />
     <Compile Include="Assets\Script\NewBehaviourScript.cs" />
+    <Compile Include="Assets\Script\NewFindScript.cs" />
     <Compile Include="Assets\Script\NewFriendScript.cs" />
     <Compile Include="Assets\Script\User.cs" />
     <Compile Include="Assets\Script\Users.cs" />

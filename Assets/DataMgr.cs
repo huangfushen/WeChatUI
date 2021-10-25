@@ -31,6 +31,18 @@ public class DataMgr
         {"1222ACFF","大黑"} 
     };
 
+    static string [,] data_find = new string [10,2] {
+        {"1.png","朋友圈"} ,  
+        {"2.png","视频号"} ,  
+        {"3.png","扫一扫"} ,
+        {"4.png","摇一摇"} ,
+        {"5.png","看一看"} ,
+        {"6.png","搜一搜"} ,
+        {"7.png","直播和附近"} ,
+        {"8.png","购物"} ,
+        {"9.png","游戏"} ,
+        {"10.png","小程序"} 
+    };
     public static string GetData(int x, int y)
     {
         return data[x, y];
@@ -39,5 +51,10 @@ public class DataMgr
     public static string GetFriendData(int x, int y)
     {
         return data_friend[x, y];
+    }
+    
+    public static string GetFindData(int x, int y)
+    {
+        return data_find[x, y];
     }
 }
