@@ -130,6 +130,8 @@ public class ChangeCheckdStatus : MonoBehaviour
              FriendPage.transform.position = site1;
              FindPage.transform.position = site1;
              MePage.transform.position = site;
+             Text nickname = GameObject.Find("NickName").GetComponent<Text>();
+             nickname.text = PlayerPrefs.GetString("loginUser");
          }
          
      }
