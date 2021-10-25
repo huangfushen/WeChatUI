@@ -27,19 +27,24 @@ public class FriendScrollView : MonoBehaviour
     // 委托
     public Action<GameObject> onAdd;
     public Action<GameObject> onDel;
-    void Start()
+
+    private void Awake()
     {
         // 滚动视图框
         content_view =  GameObject.Find("Content_friend");
         
         // 消息item
         message_item = (GameObject)Resources.Load("Prefabs/item_friend");
-        
         // 获取滚动框高度
         var viewHeight = GameObject.Find("Content_two").GetComponent<RectTransform>().sizeDelta.y;
         
         // 计算出页面初始化需要放几个
         maxItemCount = Mathf.CeilToInt(viewHeight/itemHeight)+1;
+    }
+
+    void Start()
+    {
+
     }
 
     public void SetData(int type,int _dataLength,Action<GameObject> _add,Action<GameObject> _del)
@@ -132,4 +137,5 @@ public class FriendScrollView : MonoBehaviour
         onAdd(message);
 
     }
+    
 }

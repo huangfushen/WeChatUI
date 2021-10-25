@@ -27,7 +27,8 @@ public class FindScrollView : MonoBehaviour
     // 委托
     public Action<GameObject> onAdd;
     public Action<GameObject> onDel;
-    void Start()
+
+    private void Awake()
     {
         // 滚动视图框
         content_view =  GameObject.Find("Content_find");
@@ -40,6 +41,11 @@ public class FindScrollView : MonoBehaviour
         
         // 计算出页面初始化需要放几个
         maxItemCount = Mathf.CeilToInt(viewHeight/itemHeight)+1;
+    }
+
+    void Start()
+    {
+
     }
 
     public void SetData(int type,int _dataLength,Action<GameObject> _add,Action<GameObject> _del)
@@ -132,4 +138,5 @@ public class FindScrollView : MonoBehaviour
         onAdd(message);
 
     }
+
 }

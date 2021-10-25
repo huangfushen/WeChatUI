@@ -18,15 +18,14 @@ public class NewFindScript : MonoBehaviour
     }
     public void SetData(int index,int dataIndex)
     {
-        
         message.name = index.ToString();
         GameObject mess_head =  message.transform.Find("Image_header").gameObject;
-        Image mess_head_color = mess_head.GetComponent<Image>();
-        mess_head_color.sprite = Resources.Load(DataMgr.GetData(dataIndex,0), typeof(Sprite)) as Sprite;
+        Image mess_head_img = mess_head.GetComponent<Image>();
+        mess_head_img.sprite = Resources.Load(DataMgr.GetFindData(dataIndex,0), typeof(Sprite)) as Sprite;
             
         GameObject mess_text_name =  message.transform.Find("Text_item").gameObject;
         Text mess_text = mess_text_name.GetComponent<Text>();
-        mess_text.text = DataMgr.GetData(dataIndex,1);
+        mess_text.text = DataMgr.GetFindData(dataIndex,1);
 
     }
     
