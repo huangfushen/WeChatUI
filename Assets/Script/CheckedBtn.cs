@@ -11,21 +11,22 @@ public class CheckedBtn : MonoBehaviour
     void Start()
     {
         
+        btn.onClick.AddListener(CheckedOne);
     }
 
     // Update is called once per frame
     void Update()
     {
-        btn.onClick.AddListener(CheckedOne);
     }
 
     public void CheckedOne()
     {
         Transform checken = btn.transform.parent;
         Transform item_friendO = checken.parent;
-        item_friendO.GetChild(1);
+        string friend = item_friendO.GetChild(1).GetComponent<Text>().text;
+        Debug.Log(friend);
         // string nickname = PlayerPrefs.GetString("loginUser");
-        checken.GetChild(0);
+        // checken.GetChild(0);
         // Image img1 = btn.GetComponentInParent<Image>();
     }
 }

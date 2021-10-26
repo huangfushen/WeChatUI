@@ -11,6 +11,7 @@ public class Main : MonoBehaviour
         GetComponent<FriendScrollView>().SetData(0,10,OnCreateItem,OnDelItem);
         GetComponent<FindScrollView>().SetData(0,10,OnCreateItem,OnDelItem);
         GetComponent<MeScrollView>().SetData(0,6,OnCreateItem,OnDelItem);
+        GetComponent<FriendOScrollView>().SetData(0,10,OnCreateItem,OnDelItem);
     }
 
     // Update is called once per frame

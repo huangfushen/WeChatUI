@@ -53,6 +53,19 @@ public class DataMgr
         {"setting","设置"}
     };
     
+    static string [,] data_friendO = new string [10,3] {
+        {"1296DCFF","小黄","1今天天气挺好！"} ,  
+        {"1426DCFF","小红","2今天天气挺好！"} ,  
+        {"1296ACFF","小白","3今天天气挺好！"} ,
+        {"1296ACFF","小黑","4今天天气挺好！"} ,
+        {"1216ACFF","小绿","5今天天气挺好！"} ,
+        {"1296AAFF","小橙","6今天天气挺好！"} ,
+        {"1296ACFF","小灰","7今天天气挺好！"} ,
+        {"1210ACFF","大白","8今天天气挺好！"} ,
+        {"1222ACFF","大黑","9今天天气挺好！"} ,
+        {"1222ACFF","大黑","10今天天气挺好！"} 
+    };
+    
     public static string GetData(int x, int y)
     {
         return data[x, y];
@@ -71,5 +84,9 @@ public class DataMgr
     public static string GetMePageData(int x, int y)
     {
         return data_me[x, y];
+    }
+    public static string GetFriendOData(int x, int y)
+    {
+        return data_friendO[x, y];
     }
 }

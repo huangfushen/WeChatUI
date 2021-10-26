@@ -68,12 +68,14 @@
     <Compile Include="Assets\Script\ChangeCheckdStatus.cs" />
     <Compile Include="Assets\Script\CheckedBtn.cs" />
     <Compile Include="Assets\Script\FindScrollView.cs" />
+    <Compile Include="Assets\Script\FriendOScrollView.cs" />
     <Compile Include="Assets\Script\FriendScrollView.cs" />
     <Compile Include="Assets\Script\IndexScrollView.cs" />
     <Compile Include="Assets\Script\LoginButton.cs" />
     <Compile Include="Assets\Script\MeScrollView.cs" />
     <Compile Include="Assets\Script\NewBehaviourScript.cs" />
     <Compile Include="Assets\Script\NewFindScript.cs" />
+    <Compile Include="Assets\Script\NewFriendOScript.cs" />
     <Compile Include="Assets\Script\NewFriendScript.cs" />
     <Compile Include="Assets\Script\NewMeScript.cs" />
     <Compile Include="Assets\Script\User.cs" />
