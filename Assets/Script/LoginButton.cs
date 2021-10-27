@@ -29,12 +29,7 @@ public class LoginButton : MonoBehaviour
             Vector2 site = new Vector2(5000,0);
             loginPage.transform.position = site;
             PlayerPrefs.SetString("loginUser",username);
-            Image IndexPage = GameObject.Find("IndexPage").GetComponent<Image>();
-            Image BottomNavBar = GameObject.Find("BottomNavBar").GetComponent<Image>();
-            RectTransform BottomNavBar_Rt =  BottomNavBar.GetComponent<RectTransform>();
-            IndexPage.transform.position = new Vector2(375,667);
-            IndexPage.transform.localPosition = new Vector2(375,667);
-            BottomNavBar_Rt.anchoredPosition = new Vector2(0,65);
+            SetPage();
             Debug.Log("登录成功");
         }
         else
@@ -47,6 +42,16 @@ public class LoginButton : MonoBehaviour
     public void OnInputTextClear()
     {
         text_new.text = "";
+    }
+
+    private void SetPage()
+    {
+        Image IndexPage = GameObject.Find("IndexPage").GetComponent<Image>();
+        Image BottomNavBar = GameObject.Find("BottomNavBar").GetComponent<Image>();
+        RectTransform BottomNavBar_Rt =  BottomNavBar.GetComponent<RectTransform>();
+        IndexPage.transform.localPosition = new Vector2(0,0);
+        BottomNavBar_Rt.anchoredPosition = new Vector2(0,65);
+        
     }
     
 }

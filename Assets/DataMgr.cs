@@ -66,6 +66,13 @@ public class DataMgr
         {"1222ACFF","大黑","10今天天气挺好！"} 
     };
     
+    static string [,] data_navbar = new string [4,3] {
+        {"message","微信","message_check"} ,  
+        {"addressbook","联系人","addressbook_check"} ,  
+        {"find","发现","find_check"} ,
+        {"me","我的","me_check"} 
+    };
+    
     public static string GetData(int x, int y)
     {
         return data[x, y];
@@ -88,5 +95,9 @@ public class DataMgr
     public static string GetFriendOData(int x, int y)
     {
         return data_friendO[x, y];
+    }
+    public static string GetNavBarData(int x, int y)
+    {
+        return data_navbar[x, y];
     }
 }

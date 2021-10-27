@@ -24,7 +24,6 @@ public class CheckedBtn : MonoBehaviour
         Transform checken = btn.transform.parent;
         Transform item_friendO = checken.parent;
         string friend = item_friendO.GetChild(1).GetComponent<Text>().text;
-        Debug.Log(friend);
         // string nickname = PlayerPrefs.GetString("loginUser");
         // checken.GetChild(0);
         // Image img1 = btn.GetComponentInParent<Image>();
