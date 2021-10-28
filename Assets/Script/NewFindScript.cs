@@ -5,6 +5,7 @@ using UnityEngine.UI;
 public class NewFindScript : MonoBehaviour
 {
     private GameObject message;
+    public Button btn; 
     // Start is called before the first frame update
     void Awake()
     {
@@ -22,11 +23,15 @@ public class NewFindScript : MonoBehaviour
         GameObject mess_head =  message.transform.Find("Image_header").gameObject;
         Image mess_head_img = mess_head.GetComponent<Image>();
         mess_head_img.sprite = Resources.Load(DataMgr.GetFindData(dataIndex,0), typeof(Sprite)) as Sprite;
-            
+        
         GameObject mess_text_name =  message.transform.Find("Text_item").gameObject;
         Text mess_text = mess_text_name.GetComponent<Text>();
         mess_text.text = DataMgr.GetFindData(dataIndex,1);
-
+        string findTitle = DataMgr.GetFindData(dataIndex,1);
+        if (findTitle == "朋友圈")
+        {
+            btn.onClick.AddListener(trunFriendO);
+        }
     }
     
     private Color HexToColor(string hex)
@@ -42,5 +47,10 @@ public class NewFindScript : MonoBehaviour
         float a = cc / 255f;
   
         return new Color(r, g, b, a);
+    }
+    
+    private void trunFriendO()
+    {
+        Debug.Log("我被点击了");
     }
 }

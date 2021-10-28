@@ -22,11 +22,11 @@ public class NewFriendScript : MonoBehaviour
         message.name = index.ToString();
         GameObject mess_head =  message.transform.Find("Image_header").gameObject;
         Image mess_head_color = mess_head.GetComponent<Image>();
-        mess_head_color.color = HexToColor(DataMgr.GetFriendData(dataIndex,0));
+        mess_head_color.color = HexToColor(DataMgr.GetData(dataIndex,0));
             
         GameObject mess_text_name =  message.transform.Find("Text_item").gameObject;
         Text mess_text = mess_text_name.GetComponent<Text>();
-        mess_text.text = DataMgr.GetFriendData(dataIndex,1);
+        mess_text.text = DataMgr.GetData(dataIndex,1);
 
     }
     

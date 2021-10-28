@@ -15,22 +15,10 @@ public class DataMgr
         {"1296ACFF","小灰","77","上午 06:00"} ,
         {"1210ACFF","大白","88","上午 07:00"} ,
         {"1222ACFF","大黑","99","上午 08:00"} ,
-        {"1222ACFF","大黑","10","上午 08:00"} 
+        {"1222ACFF","小蓝","10","上午 08:00"} 
     };
     
-    static string [,] data_friend = new string [10,2] {
-        {"1296DCFF","小黄"} ,  
-        {"1426DCFF","小红"} ,  
-        {"1296ACFF","小白"} ,
-        {"1296ACFF","小黑"} ,
-        {"1216ACFF","小绿"} ,
-        {"1296AAFF","小橙"} ,
-        {"1296ACFF","小灰"} ,
-        {"1210ACFF","大白"} ,
-        {"1222ACFF","大黑"} ,
-        {"1222ACFF","大黑"} 
-    };
-
+    
     static string [,] data_find = new string [10,2] {
         {"10","小程序"} ,  
         {"2","视频号"} ,  
@@ -53,17 +41,17 @@ public class DataMgr
         {"setting","设置"}
     };
     
-    static string [,] data_friendO = new string [10,3] {
-        {"1296DCFF","小黄","1今天天气挺好！"} ,  
-        {"1426DCFF","小红","2今天天气挺好！"} ,  
-        {"1296ACFF","小白","3今天天气挺好！"} ,
-        {"1296ACFF","小黑","4今天天气挺好！"} ,
-        {"1216ACFF","小绿","5今天天气挺好！"} ,
-        {"1296AAFF","小橙","6今天天气挺好！"} ,
-        {"1296ACFF","小灰","7今天天气挺好！"} ,
-        {"1210ACFF","大白","8今天天气挺好！"} ,
-        {"1222ACFF","大黑","9今天天气挺好！"} ,
-        {"1222ACFF","大黑","10今天天气挺好！"} 
+    static string [] friendOContent = new string [10] {
+            "1今天天气挺好！",
+            "2今天天气挺好！",
+            "3今天天气挺好！",
+            "4今天天气挺好！",
+            "5今天天气挺好！",
+            "6今天天气挺好！",
+            "7今天天气挺好！",
+            "8今天天气挺好！",
+            "9今天天气挺好！",
+            "10今天天气挺好！"
     };
     
     static string [,] data_navbar = new string [4,3] {
@@ -78,11 +66,6 @@ public class DataMgr
         return data[x, y];
     }
     
-    public static string GetFriendData(int x, int y)
-    {
-        return data_friend[x, y];
-    }
-    
     public static string GetFindData(int x, int y)
     {
         return data_find[x, y];
@@ -92,9 +75,9 @@ public class DataMgr
     {
         return data_me[x, y];
     }
-    public static string GetFriendOData(int x, int y)
+    public static string GetFriendOData(int x)
     {
-        return data_friendO[x, y];
+        return friendOContent[x];
     }
     public static string GetNavBarData(int x, int y)
     {

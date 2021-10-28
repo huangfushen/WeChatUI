@@ -22,15 +22,15 @@ public class NewFriendOScript : MonoBehaviour
         message.name = index.ToString();
         GameObject mess_head =  message.transform.Find("Image_header").gameObject;
         Image mess_head_color = mess_head.GetComponent<Image>();
-        mess_head_color.color = HexToColor(DataMgr.GetFriendOData(dataIndex,0));
+        mess_head_color.color = HexToColor(DataMgr.GetData(dataIndex,0));
             
         GameObject mess_text_name =  message.transform.Find("Text_item").gameObject;
         Text mess_text = mess_text_name.GetComponent<Text>();
-        mess_text.text = DataMgr.GetFriendOData(dataIndex,1);
+        mess_text.text = DataMgr.GetData(dataIndex,1);
             
         GameObject mess_content =  message.transform.Find("Text_content").gameObject;
         Text mess_content_text = mess_content.GetComponent<Text>();
-        mess_content_text.text = DataMgr.GetFriendOData(dataIndex,2);
+        mess_content_text.text = DataMgr.GetFriendOData(dataIndex);
         
     }
     
