@@ -20,10 +20,10 @@ public class DataObj
                 {"10","xiaolan","123456"}
             };
             for (int i=0; i<userInfo.GetLength(0); i++) {
-                PlayerPrefs.SetString(userInfo[i,0],userInfo[i,0]);
-                PlayerPrefs.SetString(userInfo[i,0],userInfo[i,0]);
+                PlayerPrefs.SetString(userInfo[i,0],userInfo[i,1]);
+                PlayerPrefs.SetString(userInfo[i,1],userInfo[i,2]);
             }
-
+            Debug.Log("我初始化了");
         }
 
     }

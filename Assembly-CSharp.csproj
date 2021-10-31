@@ -60,6 +60,7 @@
     <Compile Include="Assets\DataMgr.cs" />
     <Compile Include="Assets\DataObj.cs" />
     <Compile Include="Assets\Main.cs" />
+    <Compile Include="Assets\Script\backBtn.cs" />
     <Compile Include="Assets\Script\CheckedBtn.cs" />
     <Compile Include="Assets\Script\Ctrl.cs" />
     <Compile Include="Assets\Script\FindScrollView.cs" />

@@ -49,8 +49,9 @@ public class NewFindScript : MonoBehaviour
         return new Color(r, g, b, a);
     }
     
-    private void trunFriendO()
+    private void trunFriendO() 
     {
-        Debug.Log("我被点击了");
+        Image friendOPage = GameObject.Find("friendOPage").GetComponent<Image>();
+        friendOPage.transform.localPosition = new Vector2(0,0);
     }
 }
