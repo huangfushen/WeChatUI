@@ -23,6 +23,8 @@ public class FriendOScrollView : MonoBehaviour
     private int maxItemCount = 0;
     // 数据长度
     private int dataLength;
+
+    private RectTransform rectTr;
     
     // 委托
     public Action<GameObject> onAdd;
@@ -38,9 +40,10 @@ public class FriendOScrollView : MonoBehaviour
         
         // 获取滚动框高度
         var viewHeight = GameObject.Find("Content_five").GetComponent<RectTransform>().sizeDelta.y;
-        
         // 计算出页面初始化需要放几个
         maxItemCount = Mathf.CeilToInt(viewHeight/itemHeight)+1;
+        
+        rectTr = content_view.GetComponent<RectTransform>();
     }
 
     void Start()
@@ -48,13 +51,10 @@ public class FriendOScrollView : MonoBehaviour
  
     }
 
-    public void SetData(int type,int _dataLength,Action<GameObject> _add,Action<GameObject> _del)
+    public void SetData(int type,int _dataLength)
     {
-        onAdd = _add;
-        onDel = _del;
         // 数据长度
         dataLength = _dataLength;
-        
         //初始化
         // ClearAll();
         last_num = 0;
@@ -62,6 +62,7 @@ public class FriendOScrollView : MonoBehaviour
         downIndex = maxItemCount;
         
         content_view.GetComponentInParent<ScrollRect>().normalizedPosition = Vector2.zero;
+        content_view.GetComponent<RectTransform>().anchoredPosition = Vector2.zero;
         for (var i = 0; i < downIndex; i++)
         {
             AddItem(i);
@@ -82,36 +83,42 @@ public class FriendOScrollView : MonoBehaviour
      */
     public void OnScroll()
     {
+
         //判断item个数
         if(content_view.transform.childCount == 0)
             return;
         //父物体滚动条的位置坐标
-        Vector3 localPosition = content_view.transform.localPosition;
+        var localPosition = rectTr.anchoredPosition.y;
         //计算出滚动了几个物体的距离
-        int len = (int)Math.Floor(localPosition.y/ itemHeight);
+        var len = (int)Math.Floor(localPosition/ itemHeight);
         //计算出本次滚动的了几个物体的距离（如果不为0）
-        while (Math.Abs(len -last_num) != 0)
+        while (Math.Abs(len - last_num) != 0)
         {
             //向上滑动，加载下方更多
             if (len > last_num)
             {
-                if (Math.Abs(localPosition.y) > 833)
+                if (localPosition >= 900)
                 {
                     DelItem(upIndex++);
                 }
-          
+                
                 AddItem(downIndex++);
                 last_num++; 
             }
             //向下滑动，加载上方更多
             else if ( len < last_num)
             {
-                if (Math.Abs(localPosition.y) > 833)
-                {
-                    AddItem(--upIndex); 
-                }
                 
-                DelItem(--downIndex);
+                if (localPosition >= 600)
+                {
+                    AddItem(--upIndex);
+                }
+                else
+                {
+                    --upIndex;
+                }
+
+                DelItem(--downIndex);  
                 last_num--;
             }
         }
@@ -124,7 +131,6 @@ public class FriendOScrollView : MonoBehaviour
         if (go != null)
         {
             // 删除item
-            onDel(go);
             Destroy(go);
         }
     }
@@ -137,13 +143,13 @@ public class FriendOScrollView : MonoBehaviour
         message.transform.parent = content_view.transform;
         
         var item  = message.GetComponent<NewFriendOScript>();
-        var position = new Vector3(0, index * -itemHeight-533);
+        var position = new Vector3(0, index * -itemHeight-600);
         //更新Item上的位置
         item.SetPos(position);
         
         //更新Item上的表现
         item.SetData(index,dataIndex);
-        onAdd(message);
+ 
 
     }
 }

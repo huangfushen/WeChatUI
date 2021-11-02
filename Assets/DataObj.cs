@@ -23,7 +23,6 @@ public class DataObj
                 PlayerPrefs.SetString(userInfo[i,0],userInfo[i,1]);
                 PlayerPrefs.SetString(userInfo[i,1],userInfo[i,2]);
             }
-            Debug.Log("我初始化了");
         }
 
     }

@@ -17,6 +17,7 @@ public class Ctrl : MonoBehaviour
             toggle[i].onClick = OnClickToggle;
             toggle[i].index = i;
         }
+        
     }
 
     // Update is called once per frame
@@ -36,4 +37,11 @@ public class Ctrl : MonoBehaviour
         lastPanel = panel[toggle.index];
         lastPanel.SetActive(true);
     }
+
+    public void SetDefIndex(int index)
+    {
+        
+        OnClickToggle(toggle[index]);
+    }
+
 }

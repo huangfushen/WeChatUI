@@ -9,6 +9,7 @@ public class NewFriendOScript : MonoBehaviour
     void Awake()
     {
         message = gameObject;
+        
     }
 
     public void SetPos(Vector2 position)

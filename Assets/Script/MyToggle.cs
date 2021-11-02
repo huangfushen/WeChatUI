@@ -13,7 +13,7 @@ public class MyToggle : MonoBehaviour
     public Action<MyToggle> onClick;
     public int index;
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         _image = transform.GetChild(0).GetComponent<Image>();
         _text = transform.GetChild(1).GetComponent<Text>();
